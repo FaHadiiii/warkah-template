@@ -319,18 +319,22 @@ export function StandardBaseTemplate({ invitation }: { invitation: any }) {
         <FloatingPetals color={designTheme.secondaryColor || "#18181b"} />
       )}
       {/* Global Background Decoration (Watercolor stays static across the whole page) */}
-      <DecorationLayer
-        pack={designConfig.decorationPack}
-        theme={designConfig.theme}
-        mode="background"
-      />
+      <div className="global-bg-decor absolute inset-0 pointer-events-none z-0">
+        <DecorationLayer
+          pack={designConfig.decorationPack}
+          theme={designConfig.theme}
+          mode="background"
+        />
+      </div>
 
       {/* Global Scrolling Decorations (Middle and Closing elements) */}
-      <DecorationLayer
-        pack={designConfig.decorationPack}
-        theme={designConfig.theme}
-        mode="page-static"
-      />
+      <div className="global-static-decor absolute inset-0 pointer-events-none z-0">
+        <DecorationLayer
+          pack={designConfig.decorationPack}
+          theme={designConfig.theme}
+          mode="page-static"
+        />
+      </div>
 
 
       {/* Dynamic Content Sections */}

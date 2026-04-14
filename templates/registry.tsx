@@ -1,61 +1,8 @@
-import { PesonaKlasikTemplate } from "./pesona-klasik/Template";
-import { NegeriMimpiTemplate } from "./negeri-mimpi/Template";
-import { KotakHatiTemplate } from "./kotak-hati/Template";
-import { SeriRimbaTemplate } from "./seri-rimba/Template";
 import { StandardBaseTemplate } from "./standard-engine/Template";
-
-import { ASSETS as PESONA_KLASIK_ASSETS } from "./pesona-klasik/assets";
-import { ASSETS as NEGERI_MIMPI_ASSETS } from "./negeri-mimpi/assets";
-import { ASSETS as KOTAK_HATI_ASSETS } from "./kotak-hati/assets";
-import { ASSETS as SERI_RIMBA_ASSETS } from "./seri-rimba/assets";
 
 import type { TemplateConfig } from "./_shared/types";
 
 // ─── Template Configurations ──────────────────────────────────────────────────
-export const PESONA_KLASIK_CONFIG: TemplateConfig = {
-  id: "pesona-klasik",
-  displayName: "Pesona Klasik",
-  tier: "premium",
-  defaultData: {} as any,
-  defaultPlaylist: [],
-  bodyBg: "#09090b",
-  showGate: true,
-  showMusic: true,
-};
-
-export const NEGERI_MIMPI_CONFIG: TemplateConfig = {
-  id: "negeri-mimpi",
-  displayName: "Negeri Mimpi",
-  tier: "premium",
-  defaultData: {} as any,
-  defaultPlaylist: [],
-  bodyBg: "#09090b",
-  showGate: true,
-  showMusic: true,
-};
-
-export const KOTAK_HATI_CONFIG: TemplateConfig = {
-  id: "kotak-hati",
-  displayName: "Kotak Hati",
-  tier: "premium",
-  defaultData: {} as any,
-  defaultPlaylist: [],
-  bodyBg: "#09090b",
-  showGate: true,
-  showMusic: true,
-};
-
-export const SERI_RIMBA_CONFIG: TemplateConfig = {
-  id: "seri-rimba",
-  displayName: "Seri Rimba",
-  tier: "premium",
-  defaultData: {} as any,
-  defaultPlaylist: [],
-  bodyBg: "#09090b",
-  showGate: true,
-  showMusic: true,
-};
-
 export const SOFT_PASTEL_CONFIG: TemplateConfig = {
   id: "rose-lavendar",
   displayName: "Rose Lavendar",
@@ -112,6 +59,90 @@ export const PASTEL_ROSE_CONFIG: TemplateConfig = {
   },
 };
 
+export const SOFT_BLUE_CONFIG: TemplateConfig = {
+  id: "soft-blue",
+  displayName: "Soft Blue",
+  tier: "standard",
+  defaultData: {} as any,
+  defaultPlaylist: [],
+  bodyBg: "#F0F7FF",
+  showGate: true,
+  showMusic: true,
+  defaultDesignConfig: {
+    theme: {
+      primaryColor: "#F0F7FF",
+      secondaryColor: "#7AA2E3",
+      fontFamily: "sans-serif",
+    },
+    sections: {
+      hero: { visible: true },
+      couple: { visible: true },
+      event: { visible: true },
+      location: { visible: true },
+      rsvp: { visible: true },
+      guestbook: { visible: true },
+      closing: { visible: true },
+    },
+    decorationPack: "soft-blue",
+  },
+};
+
+export const SOFT_TROPICAL_CONFIG: TemplateConfig = {
+  id: "soft-tropical",
+  displayName: "Soft Tropical",
+  tier: "standard",
+  defaultData: {} as any,
+  defaultPlaylist: [],
+  bodyBg: "#F7FFF0",
+  showGate: true,
+  showMusic: true,
+  defaultDesignConfig: {
+    theme: {
+      primaryColor: "#F7FFF0",
+      secondaryColor: "#8EB486",
+      fontFamily: "sans-serif",
+    },
+    sections: {
+      hero: { visible: true },
+      couple: { visible: true },
+      event: { visible: true },
+      location: { visible: true },
+      rsvp: { visible: true },
+      guestbook: { visible: true },
+      closing: { visible: true },
+    },
+    decorationPack: "soft-tropical",
+  },
+};
+
+export const GOLD_PINKY_CONFIG: TemplateConfig = {
+  id: "gold-pinky",
+  displayName: "Gold Pinky",
+  tier: "standard",
+  defaultData: {} as any,
+  defaultPlaylist: [],
+  bodyBg: "#FFF0F5",
+  showGate: true,
+  showMusic: true,
+  defaultDesignConfig: {
+    theme: {
+      primaryColor: "#FFF0F5",
+      secondaryColor: "#D4AF37",
+      fontFamily: "serif",
+    },
+    sections: {
+      hero: { visible: true },
+      couple: { visible: true },
+      event: { visible: true },
+      location: { visible: true },
+      rsvp: { visible: true },
+      guestbook: { visible: true },
+      closing: { visible: true },
+    },
+    decorationPack: "gold-pinky",
+  },
+};
+
 // ─── Registry Mapping ────────────────────────────────────────────────────────
 // We map slugs to their raw components and configurations.
 // The wrapping with TemplateShell is now handled by the Page component
@@ -120,26 +151,6 @@ export const TEMPLATE_MAP: Record<
   string,
   { component: any; config: TemplateConfig; assets: string[] }
 > = {
-  "pesona-klasik": {
-    component: PesonaKlasikTemplate,
-    config: PESONA_KLASIK_CONFIG,
-    assets: Object.values(PESONA_KLASIK_ASSETS),
-  },
-  "negeri-mimpi": {
-    component: NegeriMimpiTemplate,
-    config: NEGERI_MIMPI_CONFIG,
-    assets: Object.values(NEGERI_MIMPI_ASSETS),
-  },
-  "kotak-hati": {
-    component: KotakHatiTemplate,
-    config: KOTAK_HATI_CONFIG,
-    assets: Object.values(KOTAK_HATI_ASSETS),
-  },
-  "seri-rimba": {
-    component: SeriRimbaTemplate,
-    config: SERI_RIMBA_CONFIG,
-    assets: Object.values(SERI_RIMBA_ASSETS),
-  },
   "rose-lavendar": {
     component: StandardBaseTemplate,
     config: SOFT_PASTEL_CONFIG,
@@ -162,7 +173,42 @@ export const TEMPLATE_MAP: Record<
       "/templates/pastel-rose/watercolor-bg.png",
     ],
   },
+  "soft-blue": {
+    component: StandardBaseTemplate,
+    config: SOFT_BLUE_CONFIG,
+    assets: [
+      "/templates/soft-blue/background.png",
+      "/templates/soft-blue/butterfly.png",
+      "/templates/soft-blue/flower.png",
+      "/templates/soft-blue/leaf.png",
+    ],
+  },
+  "soft-tropical": {
+    component: StandardBaseTemplate,
+    config: SOFT_TROPICAL_CONFIG,
+    assets: [
+      "/templates/soft-tropical/background.png",
+      "/templates/soft-tropical/butterfly.png",
+      "/templates/soft-tropical/flower-1.png",
+      "/templates/soft-tropical/flower-2.png",
+      "/templates/soft-tropical/leaf-1.png",
+      "/templates/soft-tropical/leaf-2.png",
+    ],
+  },
+  "gold-pinky": {
+    component: StandardBaseTemplate,
+    config: GOLD_PINKY_CONFIG,
+    assets: [
+      "/templates/gold-pinky/background.png",
+      "/templates/gold-pinky/flower.png",
+      "/templates/gold-pinky/gold-leaf-1.png",
+      "/templates/gold-pinky/gold-leaf-2.png",
+      "/templates/gold-pinky/splash.png",
+    ],
+  },
 };
+
+
 
 // ─── Fallback Component ──────────────────────────────────────────────────────
 export const BasicTemplate = ({ invitation }: { invitation?: any }) => (

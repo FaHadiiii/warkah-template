@@ -3,6 +3,7 @@
 import React from "react";
 import { SoftPastelDecor } from "./SoftPastelDecor";
 import { PastelRoseDecor } from "./PastelRoseDecor";
+import { StandardDecor } from "./StandardDecor";
 import type { StandardDesignConfig } from "@/templates/_shared/types";
 
 /**
@@ -14,7 +15,11 @@ export const DECORATION_PACKS: Record<
 > = {
   "rose-lavendar": SoftPastelDecor,
   "pastel-rose": PastelRoseDecor,
+  "soft-blue": (props) => <StandardDecor pack="soft-blue" {...props} />,
+  "soft-tropical": (props) => <StandardDecor pack="soft-tropical" {...props} />,
+  "gold-pinky": (props) => <StandardDecor pack="gold-pinky" {...props} />,
 };
+
 
 interface DecorationLayerProps {
   pack?: string;

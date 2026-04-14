@@ -1,29 +1,26 @@
-# Warkah Template Development Sandbox
+# Warkah Template Design Sandbox
 
-Welcome to the Warkah Template Development Sandbox. This repository is a specialized environment for implementing invitation templates for the Warkah platform.
+This is a focused environment for building and previewing the visual design of Warkah templates.
 
 ## Objective
-Implement high-quality standard templates based on provided assets, ensuring smooth GSAP animations and adherence to the `StandardDesignConfig`.
+Implement high-quality standard templates. Focus 100% on **Visuals, Layout, and GSAP Animations**. 
 
-## Architecture Overview
-- **Shared Types**: Found in `templates/_shared/types.ts`. All templates must implement the `BaseTemplateProps` and use the `TemplateConfig` interface.
-- **Standard Engine**: The `StandardBaseTemplate` dynamically renders sections based on a JSON configuration.
-- **Decoration Packs**: These are modular GSAP-animated components located in `templates/standard-engine/decorations/`.
+## What's included?
+- **Standard Engine**: The core logic that renders the top-level design.
+- **Design Previewer**: A browser-based runner in `app/page.tsx` that shows the current design with high-quality mock data.
+- **No Clutter**: All interactive drawers (RSVP, Maps, Gift) and database logic have been removed.
+
+## How to Run
+1. `npm install`
+2. `npm run dev`
+3. Open the localhost URL. Use the selector at the top left to switch designs.
 
 ## Workflow
-1.  **Reference Implementation**: Study `SoftPastelDecor.tsx` and `PastelRoseDecor.tsx` to understand the sway, flutter, and twinkling animation patterns.
-2.  **Implementation**: Create a new decoration component in `templates/standard-engine/decorations/`.
-3.  **Registration**:
-    - Add your decoration pack to `DECORATION_PACKS` in `decorations/index.tsx`.
-    - Define a new `TemplateConfig` in `templates/registry.tsx`.
-    - Add the template entry to `TEMPLATE_MAP` in `templates/registry.tsx`.
+1. Create your decoration component in `templates/standard-engine/decorations/`.
+2. Register it in `registry.tsx`.
+3. Preview it live in the browser to ensure the animations are smooth.
 
-## Project Rules
-Refer to `AGENTS.md` for critical rules regarding:
-- Next.js Image component usage.
-- Descriptive position comments for decorative elements.
-- GSAP animation best practices.
-
-## Tools
-- Use **GSAP** for all decorative animations.
-- Use **Tailwind CSS** for layout and static styling.
+## Rules
+- Focus on `GSAP` for animations.
+- Every decorative element MUST have a position comment (e.g. `{/* Position: Top Right */}`).
+- Use `Image` component with `fill` and `sizes` prop as per `AGENTS.md`.
